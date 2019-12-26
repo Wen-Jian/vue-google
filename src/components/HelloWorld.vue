@@ -21,7 +21,7 @@
         @click="center=m.position"
       />
     </GmapMap>
-    <button @click="moveTo"></button>
+    <button @click="moveTo">move</button>
   </div>
 </template>
 
