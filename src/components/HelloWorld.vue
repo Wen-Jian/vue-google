@@ -8,7 +8,7 @@
     </g-signin-button> -->
     <GmapMap
       :center="{lat:25.04776, lng:121.53185}"
-      :zoom="1"
+      :zoom="10"
       map-type-id="terrain"
       style="width: 500px; height: 300px">
       <GmapMarker
