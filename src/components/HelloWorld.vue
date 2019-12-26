@@ -7,6 +7,7 @@
         Sign in with Google
     </g-signin-button> -->
     <GmapMap
+      ref="example"
       :center="{lat:25.04776, lng:121.53185}"
       :zoom="15"
       map-type-id="terrain"
@@ -20,6 +21,7 @@
         @click="center=m.position"
       />
     </GmapMap>
+    <button @click="moveTo"></button>
   </div>
 </template>
 
@@ -43,6 +45,9 @@ export default {
     },
     onSignInError () {
       // `error` contains any error occurred.
+    },
+    moveTo () {
+      this.$refs.example.panBy(10,10)
     }
   },
   props: {
