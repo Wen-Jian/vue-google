@@ -7,7 +7,7 @@
         Sign in with Google
     </g-signin-button> -->
     <GmapMap
-      :center="{lat:10, lng:10}"
+      :center="{lat:25.04776, lng:121.53185}"
       :zoom="7"
       map-type-id="terrain"
       style="width: 500px; height: 300px">
@@ -32,7 +32,7 @@ export default {
         client_id: '1091196648923-7darvr9uestcuiqe7rvigdrgn13ol4sp.apps.googleusercontent.com'
       },
       markers: [
-        {lat:1.38, lng:103.8}
+        {position: {lat:25.1, lng:120.8}}
       ]
     }
   },
