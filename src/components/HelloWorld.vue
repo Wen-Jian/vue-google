@@ -23,7 +23,7 @@ export default {
     onSignInSuccess (user) {
       // `googleUser` is the GoogleUser object that represents the just-signed-in user.
       // See https://developers.google.com/identity/sign-in/web/reference#users
-      // console.log(user)
+      console.log(user)
     },
     onSignInError () {
       // `error` contains any error occurred.
