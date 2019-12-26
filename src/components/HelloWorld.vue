@@ -1,11 +1,25 @@
 <template>
   <div class="hello">
-    <g-signin-button
-    :params="googleSignInParams"
-    @success="onSignInSuccess"
-    @error="onSignInError">
-    Sign in with Google
-  </g-signin-button>
+    <!-- <g-signin-button
+      :params="googleSignInParams"
+      @success="onSignInSuccess"
+      @error="onSignInError">
+        Sign in with Google
+    </g-signin-button> -->
+    <GmapMap
+      :center="{lat:10, lng:10}"
+      :zoom="7"
+      map-type-id="terrain"
+      style="width: 500px; height: 300px">
+      <GmapMarker
+        :key="index"
+        v-for="(m, index) in markers"
+        :position="m.position"
+        :clickable="true"
+        :draggable="true"
+        @click="center=m.position"
+      />
+    </GmapMap>
   </div>
 </template>
 
@@ -16,7 +30,10 @@ export default {
     return {
       googleSignInParams: {
         client_id: '1091196648923-7darvr9uestcuiqe7rvigdrgn13ol4sp.apps.googleusercontent.com'
-      }
+      },
+      markers: [
+        {lat:1.38, lng:103.8}
+      ]
     }
   },
   methods: {
