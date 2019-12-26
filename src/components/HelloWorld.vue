@@ -32,7 +32,7 @@ export default {
         client_id: '1091196648923-7darvr9uestcuiqe7rvigdrgn13ol4sp.apps.googleusercontent.com'
       },
       markers: [
-        {position: {lat:25.1, lng:120.8}}
+        {position: {lat:25.04776, lng:121.53185}}
       ]
     }
   },
