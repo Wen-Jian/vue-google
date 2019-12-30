@@ -1,11 +1,11 @@
 <template>
   <div class="hello">
-    <!-- <g-signin-button
+    <g-signin-button
       :params="googleSignInParams"
       @success="onSignInSuccess"
       @error="onSignInError">
         Sign in with Google
-    </g-signin-button> -->
+    </g-signin-button>
     <GmapMap
       ref="example"
       :center="{lat:25.04776, lng:121.53185}"
