@@ -11,15 +11,12 @@ export default new Vuex.Store({
     state: {
         cliendId: '',
         fingerpring: '',
-        fpComponents: []
+        fpComponents: [],
+        user_id: ''
     },
     mutations: {
-        getClientId (state) {
-            axios.get('https://alv-backend-test.herokuapp.com/v1/subscribers').then((response)=>{
-                state.settings = response.data;
-            }).catch((response)=>{
-                response;
-            })
+        updateUserId (state, value) {
+            state.user_id = value
         },
 
         createFingerpring (state) {

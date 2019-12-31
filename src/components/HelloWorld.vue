@@ -3,7 +3,9 @@
     <g-signin-button
       :params="googleSignInParams"
       @success="onSignInSuccess"
-      @error="onSignInError">
+      @error="onSignInError"
+      v-if="!this.$store.state.user_id"
+      >
         Sign in with Google
     </g-signin-button>
     <GmapMap
@@ -44,7 +46,7 @@ export default {
       // `googleUser` is the GoogleUser object that represents the just-signed-in user.
       // See https://developers.google.com/identity/sign-in/web/reference#users
       this.registerFingerprint()
-      localStorage.user = googleUser
+      this.$store.commit('updateUserId', googleUser.getId())
       console.log(googleUser.reloadAuthResponse())
     },
     onSignInError () {
