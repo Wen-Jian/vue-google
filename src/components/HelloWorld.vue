@@ -47,7 +47,8 @@ export default {
       // See https://developers.google.com/identity/sign-in/web/reference#users
       this.registerFingerprint()
       this.$store.commit('updateUserId', googleUser.getId())
-      console.log(googleUser.Zi)
+      this.getRequestToken(googleUser)
+      console.log(googleUser)
     },
     onSignInError () {
       // `error` contains any error occurred.
@@ -59,8 +60,16 @@ export default {
       this.$store.commit('createFingerpring')
       console.log(this.$store.state.fingerpring)
     },
-    getRequestToken () {
-
+    getRequestToken (data) {
+      axios.post('https://alv-backend-test.herokuapp.com/v1/members/request_token', {
+        data: data
+      })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
     }
   },
   props: {
