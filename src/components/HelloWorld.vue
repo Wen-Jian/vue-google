@@ -21,7 +21,7 @@
         @click="center=m.position"
       />
     </GmapMap>
-    <button @click="moveTo">move</button>
+    <button @click="registerFingerprint">{{this.$store.state.fingerpring + 'moveA'}}</button>
   </div>
 </template>
 
@@ -35,13 +35,16 @@ export default {
       },
       markers: [
         {position: {lat:25.04776, lng:121.53185}}
-      ]
+      ],
+      fingerpring: this.$store.state.fingerpring
     }
   },
   methods: {
     onSignInSuccess (googleUser) {
       // `googleUser` is the GoogleUser object that represents the just-signed-in user.
       // See https://developers.google.com/identity/sign-in/web/reference#users
+      this.registerFingerprint()
+      localStorage.user = googleUser
       console.log(googleUser.reloadAuthResponse())
     },
     onSignInError () {
@@ -49,6 +52,13 @@ export default {
     },
     moveTo () {
       this.$refs.example.panBy(10,10)
+    },
+    registerFingerprint () {
+      this.$store.commit('createFingerpring')
+      console.log(this.$store.state.fingerpring)
+    },
+    getRequestToken () {
+
     }
   },
   props: {
