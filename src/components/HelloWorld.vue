@@ -47,7 +47,7 @@ export default {
       // See https://developers.google.com/identity/sign-in/web/reference#users
       this.registerFingerprint()
       this.$store.commit('updateUserId', googleUser.getId())
-      console.log(googleUser.reloadAuthResponse())
+      console.log(googleUser.Zi)
     },
     onSignInError () {
       // `error` contains any error occurred.
